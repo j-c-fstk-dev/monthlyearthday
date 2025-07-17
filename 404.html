@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Redirecting...</title>
+<script>
+  var pathSegments = location.pathname.split('/');
+    var repoName = pathSegments[1]; // Assuming your repo name is the second segment
+      location.replace(location.protocol + '//' + location.host + '/' + repoName + '/#' + location.pathname.slice(repoName.length + 2) + location.search);
+      </script>
+      </head>
+      <body>
+      </body>
+      </html>
+      
