@@ -2,17 +2,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import BlogArticlesPage from './pages/BlogArticlesPage';
-import ListOfActionsPage from '/src/pages/ListOfActionsPage';
+import ListOfActionsPage from './pages/ListOfActionsPage';
 import CalendarOfScheduledActionsPage from './pages/CalendarOfScheduledActionsPage';
-import CommunityHubPage from '/src/pages/CommunityHubPage';
-import TestimonialsPage from '/src/pages/TestimonialsPage';
+import CommunityHubPage from './pages/CommunityHubPage';
+import TestimonialsPage from './pages/TestimonialsPage';
 import Footer from './components/Footer';
 import './App.css'
 function App() {
   return (
     <div>
       <Header />
-      <BrowserRouter basename="/your-repository-name">
+      <BrowserRouter basename="/monthlyearthday">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/blog" element={<BlogArticlesPage />} />
