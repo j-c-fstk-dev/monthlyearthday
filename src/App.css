@@ -1,0 +1,257 @@
+/* Color Palette */
+:root {
+  --dark-blue-footer: #1A237E; /* Example dark blue for footer */
+  --primary-green: #4CAF50;
+  --secondary-green: #8BC34A;
+  --dark-green: #2E7D32;
+  --earth-brown: #795548;
+  --ocean-blue: #2196F3;
+  --light-gray: #F5F5F5;
+  --medium-gray: #E0E0E0;
+  --dark-gray: #424242;
+  --text-light: #FFFFFF;
+  --text-dark: #212121;
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--light-gray);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  color: var(--dark-green);
+}
+
+/* General Design Philosophy & Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* Mobile-first padding */
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 30px; /* Adjust for larger screens */
+  }
+}
+
+.section {
+  padding: 40px 0; /* Add some vertical spacing between sections */
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 9999px; /* Fully rounded */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+}
+
+.btn-secondary {
+  background-color: var(--ocean-blue);
+  color: var(--text-light);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--dark-green);
+}
+
+.btn:hover {
+  opacity: 0.9; /* Subtle hover effect */
+}
+
+/* Cards */
+.card {
+  background-color: var(--text-light);
+  border-radius: 8px; /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  text-align: center;
+  background-color: var(--text-light);
+  padding: 20px; /* Add padding to the cards */
+}
+
+/* How to Participate Section */
+.how-to-participate-steps {
+  display: flex;
+  flex-direction: column; /* Stack steps vertically on mobile */
+}
+.how-to-participate-steps {
+  display: flex;
+  flex-direction: column; /* Stack steps vertically on mobile */
+  gap: 30px; /* Add space between steps */
+}
+
+.how-to-participate-step {
+  text-align: center; /* Center content within each step on mobile */
+}
+
+.step-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  line-height: 40px;
+/* Latest Actions Section */
+.latest-actions-section {
+ padding: 40px 0;
+}
+
+.latest-action-card {
+  /* Inherits styles from .card */
+  text-align: left; /* Align text to the left within the card */
+}
+
+/* Newsletter Signup Section */
+.newsletter-signup-form {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically on mobile */
+  gap: 10px; /* Space between input and button */
+}
+.logo {
+  height: 6em; /* Keep logo height for now, will be replaced by icon */
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Inputs and Textareas */
+.input,
+.textarea {
+  border: 1px solid var(--medium-gray);
+  border-radius: 6px; /* rounded-md */
+  padding: 10px;
+  width: 100%; /* Full width on mobile */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3); /* Focus ring */
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  padding: 4px 12px;
+  border-radius: 9999px; /* Fully rounded */
+  font-size: 0.9rem;
+}
+.read-the-docs {
+  color: var(--text-light);
+  padding: 15px 0; /* Adjust padding for better spacing */
+}
+
+.tag-active {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--dark-blue-footer);
+  color: var(--text-light);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column; /* Stack elements on mobile */
+  align-items: center;
+}
+
+/* Specific Section Styles (from previous steps, will be refined) */
+
+.dark-green-text {
+  color: var(--dark-green); /* Use CSS variable */
+}
+
+.impact-metrics-container {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  gap: 20px; /* Add space between impact metrics */
+}
+
+.impact-metric {
+  text-align: center;
+  flex: 1; /* Allow metrics to grow in flex container */
+}
+
+  font-size: 2em;
+  font-weight: bold;
+}
+.impact-metric .icon {
+  font-size: 3em; /* Placeholder for icon size */
+  margin-bottom: 10px;
+}
+
+
+.impact-metric .description {
+  font-size: 1em;
+  color: var(--dark-gray); /* Use CSS variable */
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+  .how-to-participate-steps {
+    flex-direction: row; /* Arrange steps horizontally on larger screens */
+    justify-content: space-around; /* Distribute space evenly */
+  }
+  .how-to-participate-step {
+    flex: 1; /* Allow steps to take up equal space */
+  }
+}
+
+@media (min-width: 768px) {
+  .newsletter-signup-form {
+    flex-direction: row; /* Arrange elements horizontally on larger screens */
+    gap: 20px; /* Adjust spacing for larger screens */
+  }
+}
