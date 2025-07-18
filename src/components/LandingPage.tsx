@@ -1,160 +1,185 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import Card from './Card'; // Import your Card component
 
+// Purpose: Renders the main landing page of the application, showcasing the project's mission,
+// impact, ways to participate, and previews of other sections.
 function LandingPage() {
   return (
-    <div className="landing-page container">
-
-      {/* Hero Section - Placeholder */}
-      <section className="hero-section section text-center">
-        <div className="container mx-auto px-4 py-16"> {/* Added container for spacing */}
-          <h1 className="text-5xl font-bold text-text-light mb-4">Protegendo nosso planeta</h1> {/* Heading 1 */}
-          <h2 className="text-4xl font-bold text-text-light mb-8">todo mês</h2> {/* Heading 2 */}
-          <p className="text-lg text-text-light mb-8">Um movimento global para ações diárias em prol do meio ambiente</p> {/* Tagline */}
-          <div className="flex justify-center space-x-4"> {/* Buttons container */}
-            <Link to="/actions" className="btn btn-secondary">Saiba mais</Link> {/* Styled Link as button */}
-            <Link to="/calendar" className="btn btn-outline">Agende sua ação</Link> {/* Styled Link as button */}
-          </div>
-        </div>
+    <div className="landing-page"> {/* Main container div */}
+      {/* Hero Section */}
+      <section className="hero-section bg-green-500 text-white py-20 text-center">
+        <h1 className="text-5xl font-bold mb-4">Monthly Earth Day: A Daily Movement</h1>
+        <p className="text-xl mb-8">
+          Join us for small daily actions that create a big impact on our planet.
+        </p>
+        <Link
+          to="/about"
+          className="bg-white text-green-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300"
+        >
+          Learn About Our Mission
+        </Link>
       </section>
 
-      {/* About #MonthlyEarthDay Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold dark-green-text mb-4">About #MonthlyEarthDay</h2>
-        <p className="text-dark-gray mb-4">
-          At #MonthlyEarthDay, we believe every day is an opportunity to protect and celebrate our planet. Founded by Nick, who works hard to make this world a better place. Increased participation by group of environmentalists, community organizers, and everyday change-makers, our movement transforms the spirit of Earth Day into a monthly call to action. Our mission is to inspire, educate, and empower individuals and communities to take meaningful steps toward sustainability and environmental stewardship, on the 22nd of every month.
-        </p>
-        <p className="text-dark-gray">
-          Through local cleanups, tree-planting initiatives, educational workshops, and digital campaigns, #MonthlyEarthDay fosters a global community united by a shared commitment to a healthier, greener future. We partner with organizations, schools, and volunteers to create impactful, hands-on opportunities that make a difference in our neighborhoods and beyond.
-        </p>
-        <p className="text-dark-gray mt-4">
-          Join us in redefining environmental activism—because caring for our planet isn’t just an annual event, it’s a way of life. Together, let’s celebrate Earth Day every month.
+      {/* Mission Section */}
+      <section className="mission-section py-16 px-4 text-center">
+        <h2 className="text-4xl font-bold mb-6 text-gray-800">Our Mission</h2>
+        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          We believe that climate change can be fought by combining small actions.
+          Monthly Earth Day encourages you to adopt sustainable habits every day,
+          transforming care for the planet into a routine.
         </p>
       </section>
 
-      {/* Our Impact Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold dark-green-text mb-4">Nosso Impacto Até Hoje</h2> {/* Added dark-green-text class */}
-        <p className="text-dark-gray mb-4">
-          Our #MonthlyEarthDay portal primarily focuses on tracking and showcasing environmental and social impact.
-        </p>
-        <p className="text-dark-gray">
-          Environmental Impact: Through the actions we promote (such as litter collection, tree planting, reduction of plastic and water consumption, etc.), we aim to quantify and visualize direct improvements to the environment. For example, the amount of litter removed, the number of trees planted, or the collective carbon footprint reduction of participants. The idea is to show how individual and community actions contribute to a healthier planet.
-        </p>
-        <p className="text-dark-gray mt-4">
-          Social Impact: We encourage community engagement, education, and inspiration. We want to highlight how people come together to make a difference, build stronger, more conscious communities, and positively influence their social circles. Testimonials and the community feed will be crucial in demonstrating this connection and the sense of belonging to a global movement.
-        </p>
-        {/* Impact metrics */}
-        <div className="flex flex-wrap justify-around mt-8"> {/* Use flex-wrap for mobile stacking */}
-          <div className="impact-metric card"> {/* Applied card class */}
-            <div className="icon text-ocean-blue"> {/* Added color class */}
-              {/* Placeholder for wave icon - Replace with actual icon */}
- 🌊
-            </div>
-            <div className="number">25,600</div>
-            <div className="description">toneladas de lixo coletados</div>
-          </div>
-          <div className="impact-metric card"> {/* Applied card class */}
-            <div className="icon text-primary-green"> {/* Added color class */}
-              {/* Placeholder for tree icon - Replace with actual icon */}🌲</div>
- <div className="number">12,450</div>
-            <div className="description">árvores plantadas</div>
-          </div>
-          {/* Added the third impact metric */}
-          <div className="impact-metric card">
-            <div className="icon text-earth-brown">
-              {/* Placeholder for city/location icon */}📍</div>
-            <div className="number">38</div>
-            <div className="description">cidades envolvidas</div>
-          </div>
-        </div>
-      </section>
+      {/* Impact Section */}
+      <section className="impact-section bg-gray-100 py-16 px-4">
+        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">Our Impact</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Card 1: Daily Actions */}
+          <Card>
+            <h3 className="text-2xl font-bold mb-3 text-green-700">Daily Actions</h3>
+            <p className="text-gray-600 mb-4">Thousands of sustainable actions carried out globally.</p>
+            <Link
+              to="/actions"
+              className="text-green-600 font-semibold hover:underline mt-auto"
+            >
+              Learn More
+            </Link>
+          </Card>
 
-      {/* Latest Actions Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold dark-green-text mb-4">Últimas Ações</h2>
-        <div className="card">
-          {/* Placeholder for action image */}
-          <div className="w-full h-40 bg-gray-300 rounded-md mb-4"></div>
-          {/* Placeholder for action title */}
-          <h3 className="text-xl font-semibold dark-green-text mb-2">Limpeza Costeira</h3>
-          {/* Placeholder for action description */}
-          <p className="text-dark-gray mb-4">Junte-se a nós para limpar as praias e proteger nossos oceanos.</p>
-          {/* Call-to-action link/button */}
-          <Link to="/actions" className="btn btn-outline">Saiba mais</Link>
+          {/* Card 2: Engaged Community */}
+          <Card>
+            <h3 className="text-2xl font-bold mb-3 text-green-700">Engaged Community</h3>
+            <p className="text-gray-600 mb-4">A growing network of individuals committed to the planet.</p>
+            <Link
+              to="/community"
+              className="text-green-600 font-semibold hover:underline mt-auto"
+            >
+              Learn More
+            </Link>
+          </Card>
+
+          {/* Card 3: Educational Resources */}
+          <Card>
+            <h3 className="text-2xl font-bold mb-3 text-green-700">Educational Resources</h3>
+            <p className="text-gray-600 mb-4">Materials to learn and be inspired to live greener.</p>
+            <Link
+              to="/resources"
+              className="text-green-600 font-semibold hover:underline mt-auto"
+            >
+              Learn More
+            </Link>
+          </Card>
         </div>
       </section>
 
       {/* How to Participate Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold dark-green-text text-center mb-8">Como Participar</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> {/* Using grid for layout */}
-          <div className="how-to-step text-center">
-            <div className="step-number bg-primary-green text-text-light rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">
-              1
-            </div>
-            <h3 className="text-xl font-semibold dark-green-text mb-2">Escolha uma causa</h3>
-            <p className="text-dark-gray">
-              Saiba mais sobre as Causas ambientais que você pode apoiar.
-            </p>
+      <section className="participate-section py-16 px-4 text-center">
+        <h2 className="text-4xl font-bold mb-8 text-gray-800">How to Participate</h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          <div className="w-full md:w-1/3 p-4 bg-white rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold mb-4 text-green-600">1. Choose an Action</h3>
+            <p className="text-gray-700">Select a simple, sustainable daily action.</p>
           </div>
-          <div className="how-to-step text-center">
-            <div className="step-number bg-primary-green text-text-light rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">
-              2
-            </div>
-            <h3 className="text-xl font-semibold dark-green-text mb-2">Agende sua ação</h3>
-            <p className="text-dark-gray">
-              Encontre uma ação e junte-se à comunidade em um evento.
-            </p>
+          <div className="w-full md:w-1/3 p-4 bg-white rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold mb-4 text-green-600">2. Log Your Impact</h3>
+            <p className="text-gray-700">Share your actions and inspire the community.</p>
           </div>
-          <div className="how-to-step text-center">
-            <div className="step-number bg-primary-green text-text-light rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">
-              3
-            </div>
-            <h3 className="text-xl font-semibold dark-green-text mb-2">Compartilhe</h3>
-            <p className="text-dark-gray">
-              Compartilhe sua ação e inspire outros a participarem!
-            </p>
+          <div className="w-full md:w-1/3 p-4 bg-white rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold mb-4 text-green-600">3. Invite Friends</h3>
+            <p className="text-gray-700">Multiply the impact by inviting more people to the movement.</p>
           </div>
+        </div>
+        <Link
+          to="/signup"
+          className="mt-12 inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-full hover:bg-green-700 transition duration-300"
+        >
+          Get Started Now
+        </Link>
+      </section>
+
+      {/* Latest Actions Section */}
+      <section className="latest-actions-section bg-gray-100 py-16 px-4">
+        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">Latest Actions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Card 4: Planted a Tree */}
+          <Card>
+            <h3 className="text-2xl font-bold mb-3 text-green-700">Planted a Tree</h3>
+            <p className="text-gray-600 mb-4">John planted a Yellow Ipe seedling in his garden.</p>
+            <Link
+              to="/actions/plant-tree"
+              className="text-green-600 font-semibold hover:underline mt-auto"
+            >
+              View Action
+            </Link>
+          </Card>
+
+          {/* Card 5: Recycling Completed */}
+          <Card>
+            <h3 className="text-2xl font-bold mb-3 text-green-700">Recycling Completed</h3>
+            <p className="text-gray-600 mb-4">Mary separated and properly disposed of her week's recyclables.</p>
+            <Link
+              to="/actions/recycle"
+              className="text-green-600 font-semibold hover:underline mt-auto"
+            >
+              View Action
+            </Link>
+          </Card>
+
+          {/* Card 6: Water Conservation */}
+          <Card>
+            <h3 className="text-2xl font-bold mb-3 text-green-700">Water Conservation</h3>
+            <p className="text-gray-600 mb-4">Carlos reduced his shower time to 5 minutes.</p>
+            <Link
+              to="/actions/save-water"
+              className="text-green-600 font-semibold hover:underline mt-auto"
+            >
+              View Action
+            </Link>
+          </Card>
+        </div>
+        <div className="text-center mt-12">
+          <Link
+            to="/actions"
+            className="text-green-700 font-bold hover:underline"
+          >
+            View All Actions
+          </Link>
         </div>
       </section>
 
-      {/* Newsletter Signup Section */}
-      <section className="section newsletter-section text-center">
-        <h2 className="text-3xl font-semibold text-text-light mb-4">Fique por dentro das novidades</h2>
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-          <input type="email" placeholder="Seu email" className="input w-full md:w-auto" />
-          <button className="btn btn-secondary w-full md:w-auto">
-            Inscrever
+      {/* Call to Action for Newsletter */}
+      <section className="newsletter-cta bg-green-700 text-white py-16 px-4 text-center">
+        <h2 className="text-4xl font-bold mb-6">Stay Connected</h2>
+        <p className="text-xl mb-8">
+          Receive sustainability tips and updates directly in your inbox.
+        </p>
+        <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+          <input
+            type="email"
+            placeholder="Your email"
+            className="flex-grow p-3 rounded-md text-gray-800"
+          />
+          <button
+            type="submit"
+            className="bg-white text-green-700 font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300"
+          >
+            Subscribe
           </button>
+        </form>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="footer-section bg-gray-800 text-white py-10 px-4 text-center">
+        <p className="mb-4">&copy; 2025 Monthly Earth Day. All rights reserved.</p>
+        <div className="flex justify-center space-x-6">
+          <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
+          <Link to="/terms" className="hover:underline">Terms of Use</Link>
+          <Link to="/contact" className="hover:underline">Contact</Link>
         </div>
-      </section>
-
-      {/* Community Hub Preview Section - Moved the content related to Community Hub */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold dark-green-text mb-4">Community Hub</h2> {/* Reverted heading to Community Hub */}
-        {/* Content related to community hub */}
-        <Link to="/community" className="text-primary-green hover:underline font-semibold mt-4 inline-block">Join the Conversation</Link>
-      </section>
-
-      {/* Meet Our Founder Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold dark-green-text mb-4">Meet Our Founder - Nick</h2>
-        <p className="text-dark-gray">
-          Born on Earth Day, our founder Nick has always felt a deep connection to the planet. A lifelong environmentalist, Nick’s love for nature was sparked by childhood adventures in the wilderness, where he marveled at the beauty of wildlife and untouched landscapes. His passion drives #MonthlyEarthDay’s vision to make environmental care a year-round commitment. Whether hiking through forests, fishing, observing local wildlife, or leading community cleanups, Nick inspires others to protect our planet with the same enthusiasm he’s carried since his first Earth Day. His belief is simple: every step toward sustainability counts, and together, we can create a thriving future for all living things.
+        <p className="mt-4">
+          Twitter: <a href="https://x.com/highlyartistic" target="_blank" rel="noopener noreferrer" className="hover:underline">x.com/highlyartistic</a>
         </p>
-      </section>
-
-      {/* Contact Us Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold dark-green-text mb-4">Contact Us</h2>
-        <p className="text-dark-gray mb-2">
-          Email: <a href="mailto:MonthlyEarthDay@gmail.com" className="text-primary-green hover:underline">MonthlyEarthDay@gmail.com</a>
-        </p>
-        <p className="text-dark-gray">
-          Twitter: <a href="https://x.com/highlyartistic" target="_blank" rel="noopener noreferrer" className="text-primary-green hover:underline">x.com/highlyartistic</a>
-        </p>
-      </section>
+      </footer>
     </div>
   );
 }

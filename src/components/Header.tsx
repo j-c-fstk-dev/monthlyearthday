@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// Header component for navigation and mobile menu
 function Header() {
+  // State to control the visibility of the mobile navigation overlay
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Function to toggle the mobile menu state
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
     <header className="header-section">
+      {/* Container for the header content */}
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Placeholder for logo and text */}
+        {/* Logo and Portal Name */}
           <div className="logo-container flex items-center text-text-light"> {/* Container for logo and text */}
-            {/* Replace with actual logo later */}
+            {/* Placeholder for globe icon - replace with actual logo later */}
             <div className="globe-icon w-6 h-6 mr-2 bg-cover bg-center rounded-full" style={{ backgroundImage: 'url(\'https://via.placeholder.com/24/ffffff/000000?text=🌎\')' }}></div> {/* Placeholder for globe icon */}
             <span className="portal-name text-xl font-bold">#MonthlyEarthDay</span> {/* Portal name */}
           </div>
 
         {/* Desktop Navigation (Hidden on Mobile) */}
+        {/* Displays navigation links for larger screens */}
         <nav className="hidden md:flex space-x-4">
           <Link to="/" className="text-text-light hover:underline">Home</Link>
           <Link to="/blog" className="text-text-light hover:underline">Blog</Link>

@@ -1,8 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Card from '../components/Card';
 
+/**
+ * ListOfActionsPage component
+ * Displays a list of environmental actions that users can take.
+ * Includes placeholders for search and filter functionality.
+ */
 function ListOfActionsPage() {
   const actions = [
+    // List of predefined actions
     { title: 'Pick Up Litter', description: 'Clean up trash where you see it or lead/join a clean up event.' },
     { title: 'Plant Trees', description: 'Plant trees where possible or lead/join a tree planting event.' },
     { title: 'Carpool', description: 'Share a ride and carpool when possible to cut down on emissions and save gas.' },
@@ -23,9 +30,10 @@ function ListOfActionsPage() {
     { title: 'Educate Yourself', description: 'Follow #MonthlyEarthDay on social media for tips and join local cleanups to stay engaged.' },
   ];
 
+  // Render the list of actions
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1>List of Actions</h1>
+      <h1 className="text-2xl font-bold mb-6">List of Actions</h1>
 
       {/* Search and Filter Placeholders */}
       <div className="mb-6">
@@ -39,14 +47,20 @@ function ListOfActionsPage() {
         </div>
       </div>
 
-      {/* List of Actions */}
+      {/* Coming Soon Message for Search and Filter */}
+      <p className="text-dark-gray text-sm italic mb-6">Search and filter functionality are coming soon.</p>
+
+
+      {/* Display actions using the Card component */}
       <div className="action-list">
         {actions.map((action, index) => (
-          <div key={index} className="card">
-            <h3 className="text-lg font-semibold mb-2">{action.title}</h3>
+          <Card key={index}>
+            <h3 className="text-lg font-semibold mb-2 dark-green-text">
+              {action.title}
+            </h3>
             <p className="text-dark-gray">{action.description}</p>
-            {/* Placeholder for action-specific tags if needed */}
-          </div>
+           {/* Content for each action */}
+          </Card>
         ))}
       </div>
     </div>
