@@ -1,4 +1,4 @@
-import React from 'react'; // React is imported, even if not directly used in JSX for modern React versions
+// React is imported, even if not directly used in JSX for modern React versions
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';

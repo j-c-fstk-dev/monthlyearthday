@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Footer() {
   return (
     <footer className="footer-section"> {/* Define footer-section in App.css for dark background and styling */}

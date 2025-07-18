@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '../components/Card';
 
 // CommunityHubPage component displays the community feed with various types of posts.

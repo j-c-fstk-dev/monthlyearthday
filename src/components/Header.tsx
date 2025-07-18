@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react'; // <-- ADICIONE esta linha para importar useState
 
 // Header component for navigation and mobile menu
 function Header() {
